@@ -26,8 +26,8 @@ module "lambda" {
   variables          = var.variables
   publish            = null == var.publish ? false : var.publish
   policy_statements  = var.policy_statements
-  security_group_ids = var.security_group_ids
-  subnet_ids         = var.subnet_ids
+  security_group_ids = null == var.security_group_ids ? [] : var.security_group_ids
+  subnet_ids         = null == var.subnet_ids ? [] : var.subnet_ids
   providers          = {
     aws = aws
   }
