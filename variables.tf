@@ -8,15 +8,15 @@ variable "package_file" {
   type = string
 }
 variable "config_file" {
-  type = string
+  type    = string
   default = ""
 }
 variable "plugins_file" {
-  type = string
+  type    = string
   default = ""
 }
 variable "utils_file" {
-  type = string
+  type    = string
   default = ""
 }
 variable "runtime" {

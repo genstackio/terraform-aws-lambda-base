@@ -11,8 +11,11 @@ install-code:
 build:
 	@cd code && yarn --silent build
 
+format:
+	@terraform fmt -recursive
+
 test:
 	@cd  code && yarn --silent test
 
 
-.PHONY: all build install test
+.PHONY: all build format install test

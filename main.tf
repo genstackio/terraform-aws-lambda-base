@@ -2,7 +2,7 @@ data "archive_file" "lambda-code" {
   type        = "zip"
   output_path = var.package_file
   source_dir  = var.code_dir
-  depends_on  = [
+  depends_on = [
     local_file.file,
   ]
 }
@@ -28,7 +28,7 @@ module "lambda" {
   policy_statements  = var.policy_statements
   security_group_ids = null == var.security_group_ids ? [] : var.security_group_ids
   subnet_ids         = null == var.subnet_ids ? [] : var.subnet_ids
-  providers          = {
+  providers = {
     aws = aws
   }
   depends_on = [
